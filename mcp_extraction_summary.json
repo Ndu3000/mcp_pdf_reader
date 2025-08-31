@@ -1,0 +1,27 @@
+{
+  "pdf_info": {
+    "filename": "test.pdf",
+    "page_count": 1,
+    "file_size": 107730,
+    "metadata": {
+      "format": "PDF 1.4",
+      "title": "test",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "creator": "",
+      "producer": "Skia/PDF m140 Google Docs Renderer",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    }
+  },
+  "extraction_summary": {
+    "camelot_lattice": 1,
+    "camelot_stream": 0,
+    "tabula": 0,
+    "easyocr": 1
+  },
+  "best_tables_count": 2
+}

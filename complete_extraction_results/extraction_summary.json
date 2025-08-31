@@ -1,0 +1,44 @@
+{
+  "pdf_path": "test.pdf",
+  "methods_used": [
+    "mcp"
+  ],
+  "total_tables_found": 2,
+  "best_tables_count": 2,
+  "extraction_summary": {
+    "mcp": {
+      "tables_found": 2,
+      "extraction_methods": {
+        "camelot_lattice": [
+          "   0 1 2 3 4 5 6 7 8\n0                   \n1                   \n2                   \n3                   \n4                   \n5                   \n6                   \n7                   \n8                   \n9                   \n10                  \n11                  \n12                  \n13                  \n14                  \n15                  \n16                  \n17                  \n18                  \n19                  \n20                  \n21                  \n22                  \n23                  \n24                  \n25                  \n26                  \n27                  \n28                  \n29                  \n30                  \n31                  \n32                  \n33                  \n34                  \n35                  \n36                  \n37                  \n38                  "
+        ],
+        "camelot_stream": [],
+        "tabula": [],
+        "easyocr": [
+          "             Column_0             Column_1             Column_2  ...     Column_4      Column_5     Column_6\n0                 EDD               unnuni             D7 utn]S  ...  Recetd Dala        6147-L             \n1  HaPte Attlta+ntatg                                            ...                                        \n2     RLAete Luprelan              AnemAEa  Jen Luntiea Lut_LLC  ...      AFeTFae                           \n3                Tupu                                            ...                                        \n4            ECA-eaan                                            ...                                        \n5         AmeneENtRGn         Kheenucennra                       ...                                        \n6              U1ozon                   au            WET  EATt  ...   EEne FEtnn  Tnueunllamea  HhuAnuanalL\n7        mnAELIumf-Am           Weettiatet                  Une  ...                                        \n8               Vuer>  Teznamc\"Kneanorar ,         [EAAAHEApan]  ...                                        \n\n[9 rows x 7 columns]"
+        ]
+      },
+      "pdf_info": {
+        "filename": "test.pdf",
+        "page_count": 1,
+        "file_size": 107730,
+        "metadata": {
+          "format": "PDF 1.4",
+          "title": "test",
+          "author": "",
+          "subject": "",
+          "keywords": "",
+          "creator": "",
+          "producer": "Skia/PDF m140 Google Docs Renderer",
+          "creationDate": "",
+          "modDate": "",
+          "trapped": "",
+          "encryption": null
+        }
+      }
+    },
+    "hybrid": {
+      "error": "API error occurred: Status 400\n{\"object\":\"error\",\"message\":\"Image content must be a URL (starting with 'https') or base64 encoded image (starting with 'data:image/<format>;base64,<image-base64>'). Received: data:application/pdf;base64,JVBERi0xLjQKJdPr6eEKMS...ovSW5mbyAxIDAgUj4+CnN0YXJ0eHJlZgoxMDcyMzEKJSVFT0YK\",\"type\":\"invalid_request_invalid_args\",\"param\":null,\"code\":\"3051\"}"
+    }
+  }
+}
