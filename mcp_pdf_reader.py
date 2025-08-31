@@ -3,6 +3,8 @@ from typing import AsyncIterator
 from mcp.server.fastmcp import FastMCP
 import fitz  # correct import for PyMuPDF
 import os
+import sys
+import argparse
 from contextlib import asynccontextmanager
 
 # Directory where PDFs are stored
@@ -49,6 +51,59 @@ def read_pdf(ctx, filename: str) -> str:
         return text if text else "No text found in the PDF."
     except Exception as e:
         return f"Error reading PDF: {str(e)}"
+
+def scan_pdf(filename: str) -> str:
+    """
+    Standalone function to scan and extract text from a PDF file.
+    :param filename: Path to the PDF file to scan
+    :return: Extracted text from the PDF
+    """
+    # Check if file exists
+    if not os.path.exists(filename):
+        return f"Error: File '{filename}' not found."
+    
+    try:
+        # Open and extract text from the PDF
+        doc = fitz.open(filename)
+        text = "\n".join([page.get_text("text") for page in doc])
+        doc.close()
+        return text if text else "No text found in the PDF."
+    except Exception as e:
+        return f"Error reading PDF: {str(e)}"
+
+def llama_scan_cli():
+    """
+    Command-line interface for llama-scan command.
+    """
+    parser = argparse.ArgumentParser(
+        description="Scan and extract text from PDF files",
+        prog="llama-scan"
+    )
+    parser.add_argument(
+        "filename", 
+        help="PDF file to scan"
+    )
+    parser.add_argument(
+        "-o", "--output",
+        help="Output file to save extracted text (optional, prints to stdout by default)"
+    )
+    
+    args = parser.parse_args()
+    
+    # Scan the PDF
+    result = scan_pdf(args.filename)
+    
+    # Output the result
+    if args.output:
+        try:
+            with open(args.output, 'w', encoding='utf-8') as f:
+                f.write(result)
+            print(f"Text extracted and saved to: {args.output}")
+        except Exception as e:
+            print(f"Error writing to output file: {str(e)}", file=sys.stderr)
+            sys.exit(1)
+    else:
+        print(result)
 
 # Run the MCP server
 def main():

@@ -1,6 +1,8 @@
 # MCP Enabled PDF Reader
 Model Context Protocol (MCP) server exposes a tool called read_pdf to read a single pdf document. This has been tested on Claude Desktop and LibreChat with Ollama. Although there is no maximum size to the pdf file that can be read, the number of tokens passed to the model will be the limiting factor.
 
+This package also includes a command-line tool `llama-scan` for direct PDF text extraction.
+
 ## Installation
 
 ### Prerequisites
@@ -52,6 +54,27 @@ Add the following to your `claude_desktop_config.json`:
     }
 }
 ```
+
+## Command Line Usage
+
+The package includes a `llama-scan` command for direct PDF text extraction:
+
+```bash
+# Basic usage - extract text and print to stdout
+llama-scan document.pdf
+
+# Save extracted text to a file
+llama-scan document.pdf -o extracted_text.txt
+
+# Show help
+llama-scan --help
+```
+
+The command will:
+- Extract all text from the specified PDF file
+- Handle errors gracefully (file not found, invalid formats, etc.)
+- Support output to stdout or a specified file
+- Work with any PDF file that PyMuPDF can process
 ## Attribution
 
 This software package implements the ability to read a pdf file into a MCP enabled framework and is developed by [Safe Swiss Cloud](https://safeswisscloud.com). 
