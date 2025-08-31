@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+"""
+llama-scan command - A CLI tool to scan and extract text from PDF files
+"""
+
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from mcp_pdf_reader import llama_scan_cli
+
+if __name__ == "__main__":
+    llama_scan_cli()
